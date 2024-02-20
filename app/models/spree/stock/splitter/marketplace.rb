@@ -1,3 +1,5 @@
+require_dependency 'spree/stock/splitter/base'
+
 module Spree
   module Stock
     module Splitter

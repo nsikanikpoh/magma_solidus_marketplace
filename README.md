@@ -22,7 +22,25 @@ Here's how to install solidus_marketplace into your existing spree site AFTER yo
 
 Add the following to your Gemfile:
 
-    gem 'solidus_marketplace'
+    gem 'solidus_marketplace', github: 'Zedek-Inc/magma_solidus_marketplace'
+
+    # Solidus Marketplace Dependencies
+    # gem 'capybara'       
+    gem 'coffee-rails'
+    gem 'coveralls'
+    # gem 'database_cleaner'
+    gem 'factory_girl_rails'
+    # gem 'ffaker'
+    gem 'launchy'
+    # gem 'rspec-rails'
+    gem 'sass-rails'
+    # gem 'selenium-webdriver'
+    gem 'shoulda-matchers'
+    gem 'solidus_sample'
+    # gem 'sqlite3'
+    gem 'log_buddy'
+    gem 'awesome_print'
+    gem 'pry'
 
 Make your bundle happy:
 
@@ -31,6 +49,8 @@ Make your bundle happy:
 Now run the generator:
 
     rails g solidus_marketplace:install
+
+    `C:/Ruby32-x64/lib/ruby/gems/3.2.0/bundler/gems/magma_solidus_marketplace-2ebd9ccdf323/app/controllers/spree/admin/reports_controller_decorator.rb:3:in `<main>': uninitialized constant Spree::Admin::ReportsController (NameError)`
 
 (Optional) Run the generator for solidus_gateway to enable the use of Stripe or other payment providers
 included with that extension:

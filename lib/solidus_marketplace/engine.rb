@@ -1,6 +1,8 @@
 module SolidusMarketplace
   class Engine < Rails::Engine
     require 'spree/core'
+    require 'spree/config'
+
     isolate_namespace Spree
     engine_name 'solidus_marketplace'
 
@@ -12,10 +14,12 @@ module SolidusMarketplace
     end
 
     initializer 'solidus_marketplace.custom_splitters', after: 'spree.register.stock_splitters' do |app|
+      require 'spree/stock/splitter/marketplace'
       app.config.spree.stock_splitters << Spree::Stock::Splitter::Marketplace
     end
 
     initializer "solidus_marketplace.preferences", before: :load_config_initializers  do |app|
+      require 'spree/marketplace_configuration'
       SolidusMarketplace::Config = Spree::MarketplaceConfiguration.new
     end
 
