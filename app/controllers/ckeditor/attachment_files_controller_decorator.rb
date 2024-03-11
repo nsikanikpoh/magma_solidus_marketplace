@@ -2,7 +2,7 @@ if defined?(Ckeditor::AttachmentFilesController)
   Ckeditor::AttachmentFilesController.class_eval do
 
     load_and_authorize_resource :class => 'Ckeditor::AttachmentFile'
-    after_filter :set_supplier, only: [:create]
+    after_action :set_supplier, only: [:create]
 
     def index
     end
