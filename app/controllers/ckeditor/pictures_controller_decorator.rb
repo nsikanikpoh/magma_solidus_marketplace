@@ -1,7 +1,7 @@
 if defined?(Ckeditor::PicturesController)
   Ckeditor::PicturesController.class_eval do
     load_and_authorize_resource :class => 'Ckeditor::Picture'
-    after_filter :set_supplier, only: [:create]
+    after_action :set_supplier, only: [:create]
 
     def index
     end
